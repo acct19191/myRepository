@@ -1,0 +1,36 @@
+﻿<Window x:Class="Test_Task_for_Prodactivity_Inside.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Test_Task_for_Prodactivity_Inside"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="459.104" Width="489.451"  WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:CurrencyConverterModel></local:CurrencyConverterModel>
+    </Window.DataContext>
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox Background="AliceBlue" Margin="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20"  Text="{Binding FirstValue, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" FontWeight="Bold"></TextBox>
+        <TextBox Background="AliceBlue" Margin="5" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Text="{Binding SecondValue, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" Grid.Row="2" FontWeight="Bold"></TextBox>
+        <Button Margin="5" Command="{Binding OpenFirstChangeCurrencyWindow, UpdateSourceTrigger=PropertyChanged}" FontSize="14" Content="Выбрать
+ Валюту" Grid.Row="3" FontWeight="Bold"></Button>
+        <Button Margin="5" Command="{Binding OpenSecondChangeCurrencyWindow,UpdateSourceTrigger=PropertyChanged}" 
+                FontSize="14" Content="Выбрать Валюту" Grid.Column="2" Grid.Row="3" FontWeight="Bold"></Button>
+        <TextBlock TextWrapping="Wrap"  TextAlignment="Center" Grid.Row="1" FontSize="20" VerticalAlignment="Center" Text="{Binding First,UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"></TextBlock>
+        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Grid.Row="1" FontSize="20" VerticalAlignment="Center" Grid.Column="2" Text="{Binding Second,UpdateSourceTrigger=PropertyChanged}" FontWeight="Bold"></TextBlock>
+        <Image  Grid.Column="1"  Grid.Row="2" Source="Без названия.png" Stretch="Fill"  />
+       
+    </Grid>
+</Window>
